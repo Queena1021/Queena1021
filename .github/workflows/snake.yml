@@ -22,12 +22,16 @@ jobs:
           # color_dots runs empty -> most active. Without it the snake is
           # GitHub green, which belongs to no palette anyone picks.
           #
-          # The ramp has to *step*. A first attempt kept levels 0-2 all in the
-          # pale end of the palette to stay on-theme, and 121 contributions
-          # rendered as an apparently empty grid.
+          # Two things this ramp has to do, and the first two attempts each
+          # missed one:
+          #
+          # 1. Step. Levels 0-2 all in the pale end read as an empty grid.
+          # 2. Separate from the page. The empty cell is most of the grid, so
+          #    if it sits near the GitHub background the whole thing washes
+          #    out — #e8f4fd vanished on white, #16202b vanished on #0d1117.
           outputs: |
-            dist/github-snake.svg?color_snake=#a83d6e&color_dots=#e8f4fd,#9bdcf7,#4a9fd4,#2a6f96,#14435f
-            dist/github-snake-dark.svg?color_snake=#ff9ec6&color_dots=#16202b,#1f4e6e,#2f7fae,#6fc0e6,#cfeafa
+            dist/github-snake.svg?color_snake=#a83d6e&color_dots=#d3e8f7,#8ecdf0,#4a9fd4,#2a6f96,#14435f
+            dist/github-snake-dark.svg?color_snake=#ff9ec6&color_dots=#243447,#2f6c92,#4a9fd4,#8fd0ee,#d6f0fd
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@1d6ee9b181a81033a16bd707a1401afa978daab4
