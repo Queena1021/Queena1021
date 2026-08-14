@@ -21,9 +21,13 @@ jobs:
           github_user_name: ${{ github.repository_owner }}
           # color_dots runs empty -> most active. Without it the snake is
           # GitHub green, which belongs to no palette anyone picks.
+          #
+          # The ramp has to *step*. A first attempt kept levels 0-2 all in the
+          # pale end of the palette to stay on-theme, and 121 contributions
+          # rendered as an apparently empty grid.
           outputs: |
-            dist/github-snake.svg?color_snake=#a83d6e&color_dots=#eaf6fe,#cfeafa,#9bdcf7,#4a9fd4,#14435f
-            dist/github-snake-dark.svg?color_snake=#ff9ec6&color_dots=#16202b,#1f4e6e,#4a9fd4,#9bdcf7,#eaf6fe
+            dist/github-snake.svg?color_snake=#a83d6e&color_dots=#e8f4fd,#9bdcf7,#4a9fd4,#2a6f96,#14435f
+            dist/github-snake-dark.svg?color_snake=#ff9ec6&color_dots=#16202b,#1f4e6e,#2f7fae,#6fc0e6,#cfeafa
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@1d6ee9b181a81033a16bd707a1401afa978daab4
