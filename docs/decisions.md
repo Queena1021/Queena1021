@@ -60,9 +60,15 @@ Two things about it:
   not serve private repos. The workflow still runs and the `output` branch still
   updates — the image simply cannot load until the repo is public. Expected, not a
   bug to chase.
-- **The colour ramp has to step.** A first pass kept levels 0-2 all in the pale end
-  of the palette to stay on-theme, and the grid looked empty. The ramp now runs
-  `#e8f4fd → #9bdcf7 → #4a9fd4 → #2a6f96 → #14435f`.
+- **The ramp has to step, and it has to clear the page.** The empty cell is most of
+  the grid, so two separate mistakes both make it look broken: levels 0-2 bunched
+  at the pale end (the grid reads as empty), and an empty cell close to the GitHub
+  background (`#e8f4fd` vanished on white, `#16202b` on `#0d1117`). Current ramps:
+
+  | | empty | 1 | 2 | 3 | 4 | snake |
+  |---|---|---|---|---|---|---|
+  | light | `#d3e8f7` | `#8ecdf0` | `#4a9fd4` | `#2a6f96` | `#14435f` | `#a83d6e` |
+  | dark | `#243447` | `#2f6c92` | `#4a9fd4` | `#8fd0ee` | `#d6f0fd` | `#ff9ec6` |
 
 The grid is sparse because the public calendar has 12 active days in the last year
 (121 contributions, concentrated in bursts). That is accurate, not a rendering

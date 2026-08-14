@@ -64,5 +64,20 @@ reading "Something went wrong", so re-probe rather than trusting a status code.
 To preview locally the way GitHub will render it:
 
 ```bash
-python3 -c "import base64,pathlib,subprocess; md=pathlib.Path('README.md').read_text(); b=subprocess.run(['gh','api','markdown','-f','text='+md,'-f','mode=markdown'],capture_output=True,text=True).stdout; [b:=b.replace(f'./assets/{n}.svg','data:image/svg+xml;base64,'+base64.b64encode(pathlib.Path(f'assets/{n}.svg').read_bytes()).decode()) for n in ('hero','about')]; pathlib.Path('preview.html').write_text('<style>body{background:#0d1117;color:#e6edf3;font:16px/1.6 sans-serif;max-width:1012px;margin:0 auto;padding:32px 48px}img{max-width:100%}</style>'+b)"
+python3 scripts/preview.py
 ```
+
+It renders `README.md` through GitHub's own markdown API, then inlines the local
+SVGs and both snake variants so the page works from a `data:` URL.
+
+Two traps it exists to avoid:
+
+- **The markdown API rewrites every image URL to its `camo` proxy.** Substituting
+  on `raw.githubusercontent.com` in the rendered HTML matches nothing and fails
+  *silently*, leaving the preview showing whatever camo serves. The script
+  replaces the whole `<picture>` block and errors if it does not find exactly one.
+- **Inline both `<picture>` sources, not just the `<img>` fallback.** Doing only
+  the light one shows a glaring white grid to anyone previewing in dark mode,
+  which looks exactly like a palette bug in the artwork.
+
+Check it in both themes before believing a colour is wrong.
