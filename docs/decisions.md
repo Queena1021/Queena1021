@@ -96,6 +96,37 @@ curl -s 'https://skillicons.dev/icons?i=java,ts,py' | grep -c '<svg'
 instead. `theme=light` matches the pale palette; `theme=dark` puts the icons on
 near-black tiles that float on the light cards.
 
+## Theme-aware images: two traps
+
+The snake and the footer wave each ship as a `<picture>` with a light and a dark
+variant. Both broke in ways that looked like colour bugs in the artwork.
+
+**A comma in `srcset` truncates the URL.** `srcset` parses commas as separators
+between candidates, so capsule-render's gradient
+`color=0:9bdcf7,50:4a9fd4,100:a83d6e` was cut down to `color=0:9bdcf7` — a
+near-black wave with no text. Percent-encode them (`%2C`, and `%3A` for the
+colons) inside any `srcset`. The `src` of a plain `<img>` has no such parsing,
+which is why only the dark variant was affected. The snake URLs contain no
+commas, which is why they never showed this.
+
+**`<picture>` only drives a direct child `<img>`.** The markdown API wraps every
+rendered image in an `<a>`, which makes the `<img>` a grandchild and causes every
+theme-aware image to fall back silently to its light variant. That is a preview
+artifact — `scripts/preview.py` unwraps them — but it hid the real result for
+several rounds. If a variant looks wrong, check `img.currentSrc` before changing
+any colours.
+
+## The divider
+
+`assets/divider.svg` is **hand-written**, not generated from `profile.toml` — the
+skill's generators produce the banner and the panel only. Editing it directly is
+correct; it will not be overwritten.
+
+The rule is a `<rect>`, not a `<line>`: a line has zero height, so its bounding box
+has no area and an `objectBoundingBox` gradient resolves to nothing and vanishes.
+Both ends fade to transparent so it carries no background of its own and reads on
+a white page and a dark one alike.
+
 ## Stats host
 
 `github-readme-stats.vercel.app` (the canonical one) returns `DEPLOYMENT_PAUSED`.

@@ -2,11 +2,15 @@
   <img src="./assets/hero.svg" alt="Queena — full-stack developer building AI-powered apps" width="100%"/>
 </div>
 
-<br/>
+<div align="center">
+  <img alt="Full-stack developer · AI agents and LLM pipelines · Java, Python, TypeScript, Swift · one commit at a time" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2600&pause=700&color=3D87B8&center=true&vCenter=true&width=700&lines=Full-stack+developer;AI+agents+%26+LLM+pipelines;Java+%C2%B7+Python+%C2%B7+TypeScript+%C2%B7+Swift;%E2%9C%A6+one+commit+at+a+time+%E2%9C%A6"/>
+</div>
+
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 <img src="./assets/about.svg" alt="Current focus: AI agents and LLM pipelines, RAG and retrieval, backend systems, full-stack web." width="100%"/>
 
-<br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 ## ✦ Stack
 
@@ -18,7 +22,7 @@
 
 </div>
 
-<br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
 
 ## ✦ Stats
 
@@ -29,7 +33,9 @@
 
 </div>
 
-<br/>
+<img src="./assets/divider.svg" width="100%" alt=""/>
+
+## ✦ Contribution snake
 
 <div align="center">
   <picture>
@@ -38,7 +44,14 @@
   </picture>
 </div>
 
-<br/>
+<div align="center">
+  <picture>
+    <!-- Commas are percent-encoded: srcset parses a bare comma as the start of
+         the next candidate, which truncates the gradient to "color=0:9bdcf7". -->
+    <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&section=footer&color=0%3A9bdcf7%2C50%3A4a9fd4%2C100%3Aa83d6e&height=150&text=Thanks%20for%20scrolling&fontColor=ffffff&fontSize=28&fontAlignY=70&animation=twinkling"/>
+    <img alt="Thanks for scrolling" width="100%" src="https://capsule-render.vercel.app/api?type=waving&section=footer&color=0:d3e8f7,50:9bdcf7,100:ff9ec6&height=150&text=Thanks%20for%20scrolling&fontColor=14435f&fontSize=28&fontAlignY=70&animation=twinkling"/>
+  </picture>
+</div>
 
 <div align="center">
   <sub>˚｡⋆ built with too much tea and one very patient dog ⋆｡˚</sub>

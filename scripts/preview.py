@@ -60,9 +60,15 @@ def main() -> int:
     md = (root / "README.md").read_text()
     body = gh("api", "markdown", "-f", f"text={md}", "-f", "mode=markdown")
 
-    for name in ("hero", "about"):
-        body = body.replace(f"./assets/{name}.svg",
-                            data_uri((root / "assets" / f"{name}.svg").read_bytes()))
+    # The markdown API wraps every rendered image in an <a>. That makes the
+    # <img> a grandchild of <picture>, and <picture> only applies its <source>
+    # elements to a direct child <img> — so every theme-aware image silently
+    # falls back to its light variant in the preview and looks like a palette
+    # bug. GitHub's own README rendering keeps the img directly inside.
+    body = re.sub(r"<a\b[^>]*>\s*(<img\b[^>]*>)\s*</a>", r"\1", body)
+
+    for asset in sorted((root / "assets").glob("*.svg")):
+        body = body.replace(f"./assets/{asset.name}", data_uri(asset.read_bytes()))
 
     if not args.no_snake:
         light, dark = (data_uri(base64.b64decode(gh(
@@ -72,14 +78,18 @@ def main() -> int:
         # substituted: the markdown API rewrites every image URL to its camo
         # proxy, so matching on raw.githubusercontent.com finds nothing, fails
         # silently, and leaves the preview showing something else entirely.
-        body, n = re.subn(
-            r"<picture>.*?</picture>",
-            '<picture><source media="(prefers-color-scheme: dark)" '
-            f'srcset="{dark}"/><img alt="Snake eating my contribution graph" '
-            f'src="{light}"/></picture>',
-            body, flags=re.S)
-        if n != 1:
-            sys.exit(f"expected 1 <picture> block in the rendered README, found {n}")
+        # Only the snake's block: the footer is a second <picture>, and its
+        # capsule-render URLs are public, so camo serves those fine.
+        blocks = [m for m in re.finditer(r"<picture>.*?</picture>", body, re.S)
+                  if "Snake eating" in m.group(0)]
+        if len(blocks) != 1:
+            sys.exit(f"expected 1 snake <picture> block, found {len(blocks)}")
+        m = blocks[0]
+        body = (body[:m.start()]
+                + '<picture><source media="(prefers-color-scheme: dark)" '
+                  f'srcset="{dark}"/><img alt="Snake eating my contribution graph" '
+                  f'src="{light}"/></picture>'
+                + body[m.end():])
 
     out = root / "preview.html"
     out.write_text('<!doctype html><meta charset="utf-8">'
