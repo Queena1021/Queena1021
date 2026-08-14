@@ -17,4 +17,4 @@ that renders on the profile page. Built with the `building-profile-readmes` skil
 - **Never add a card URL without fetching it first.** These services return HTTP
   200 with an error card when they fail.
 - **The repo must be public for the README to appear on the profile.** It is
-  currently private.
+  currently private, which also means the contribution snake's raw URL 404s.

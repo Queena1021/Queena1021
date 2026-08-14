@@ -35,15 +35,38 @@ Three other cards were built, verified, and then removed:
   it was accurate about public code and badly wrong about the person.
 - **Activity graph** rendered an empty flat line. Private-repo contributions do
   not reach that service, so it looked like a dead account.
-- **Streak card** is genuinely flaky. Sampled six times against each of its two
-  hosts (`streak-stats.demolab.com` and the legacy `herokuapp` deployment): both
-  scored 3/6 — two timeouts past 25s and one HTTP 200 carrying a "Failed to
-  retrieve contributions" error card. About half of visitors would see something
-  broken. A single probe passes and tells you nothing, which is the whole reason
-  to sample.
+The two become worth adding the moment more repos go public.
 
-The first two become worth adding the moment more repos go public. The streak card
-only becomes worth adding if its hosting improves; re-sample before trusting it.
+## The streak card ships flaky, knowingly
+
+Sampled six times against each of its two hosts (`streak-stats.demolab.com` and
+the legacy `herokuapp` deployment). Both scored **3/6**: two timeouts past 25s and
+one HTTP 200 carrying a "Failed to retrieve contributions" error card. Roughly half
+of visitors see something broken.
+
+It is in the README by explicit request with that tradeoff understood. A single
+probe passes and tells you nothing here, which is the whole reason to sample — if
+you ever wonder whether it has improved, sample it again rather than loading the
+profile once.
+
+## Contribution snake
+
+`.github/workflows/snake.yml` runs `Platane/snk` on every push to `main` and every
+12 hours, rendering to the `output` branch, which the README references by raw URL.
+
+Two things about it:
+
+- **The raw URL 404s while the repo is private.** `raw.githubusercontent.com` does
+  not serve private repos. The workflow still runs and the `output` branch still
+  updates — the image simply cannot load until the repo is public. Expected, not a
+  bug to chase.
+- **The colour ramp has to step.** A first pass kept levels 0-2 all in the pale end
+  of the palette to stay on-theme, and the grid looked empty. The ramp now runs
+  `#e8f4fd → #9bdcf7 → #4a9fd4 → #2a6f96 → #14435f`.
+
+The grid is sparse because the public calendar has 12 active days in the last year
+(121 contributions, concentrated in bursts). That is accurate, not a rendering
+fault, and it fills in on its own.
 
 `count_private=true` is on the stats card by explicit choice. It folds private-repo
 contribution counts into the totals — no repo names are exposed, but the aggregate
