@@ -1,0 +1,44 @@
+[profile]
+name_first = "QUEENA"
+name_last  = "HO"
+tagline    = "Full-stack developer · building AI-powered apps"
+badge      = "AI APPS"
+
+[palette]
+# cinnamoroll = pale sky blue crossfading to pastel pink, white cloud banks,
+# a warm sun, dark blue ink. Defined in both generators; see docs/regenerating.md.
+name = "cinnamoroll"
+
+[banner]
+title    = "QUEENA"
+subtitle = "one commit at a time"
+kicker   = "FULL-STACK · AI APPLICATIONS"
+motif      = "image"
+image      = "assets/cinnamoroll.png"
+image_x    = 132
+image_y    = 120
+image_size = 200
+particles = 18
+flakes    = 40
+seed      = 21
+
+[panel]
+# Empty: employer and school are deliberately not published.
+experience = []
+focus      = ["AI agents & LLM pipelines", "RAG & retrieval", "Backend systems", "Full-stack web"]
+# Empty on purpose: the stack is rendered once, as the skill-icon strip in
+# README.md. A tag row here as well would be the same fact drawn twice.
+stack      = []
+status     = "Building side projects · open to new opportunities"
+
+avatar = "assets/avatar.png"
+
+experience_label = "EXPERIENCE"
+focus_label      = "CURRENT FOCUS"
+stack_label      = "STACK"
+status_label     = "CURRENTLY"
+
+[github]
+user = "Queena1021"
+# Only simptradkeyboard and forage-midas are public; user chose not to pin yet.
+pin_repos = []
