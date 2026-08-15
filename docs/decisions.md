@@ -37,17 +37,18 @@ Three other cards were built, verified, and then removed:
   not reach that service, so it looked like a dead account.
 The two become worth adding the moment more repos go public.
 
-## The streak card ships flaky, knowingly
+## The streak card is commented out, not deleted
 
 Sampled six times against each of its two hosts (`streak-stats.demolab.com` and
 the legacy `herokuapp` deployment). Both scored **3/6**: two timeouts past 25s and
 one HTTP 200 carrying a "Failed to retrieve contributions" error card. Roughly half
-of visitors see something broken.
+of visitors saw something broken.
 
-It is in the README by explicit request with that tradeoff understood. A single
-probe passes and tells you nothing here, which is the whole reason to sample — if
-you ever wonder whether it has improved, sample it again rather than loading the
-profile once.
+It shipped for a while with that tradeoff accepted, then got pulled once it was
+confirmed unusable in practice. The `<img>` stays in `README.md` inside an HTML
+comment rather than being deleted, so re-enabling it later is a one-line
+uncomment, not a rebuild. Re-sample before doing that — a single probe passes and
+tells you nothing here, which is the whole reason to sample.
 
 ## Contribution snake
 

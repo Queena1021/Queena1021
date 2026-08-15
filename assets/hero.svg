@@ -257,12 +257,10 @@
     <text x="500" y="146" text-anchor="middle"
       font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="66" font-weight="800"
       letter-spacing="10" fill="#1f4e6e">QUEENA</text>
-    <text x="500" y="180" text-anchor="middle"
-      font-family="'Fira Code','JetBrains Mono',ui-monospace,monospace" font-size="15"
-      fill="#1f4e6e" letter-spacing="4" opacity=".92">one commit at a time</text>
-    <text x="500" y="206" text-anchor="middle"
+    
+    <text x="500" y="188" text-anchor="middle"
       font-family="'Segoe UI',Arial,sans-serif" font-size="12" fill="#235c82"
-      letter-spacing="8" opacity=".82">FULL-STACK · AI APPLICATIONS</text>
+      letter-spacing="8" opacity=".82">SOFTWARE ENGINEER · AI APPLICATIONS</text>
 
     <rect x="-260" y="0" width="260" height="280" fill="#ffffff" opacity=".05">
       <animate attributeName="x" values="-260;1000" dur="9s" repeatCount="indefinite"/>

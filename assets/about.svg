@@ -30,7 +30,7 @@
 
     <text x="34" y="52" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="27" font-weight="800"
           fill="#14435f">QUEENA<tspan dx="10" fill="#1f5878">HO</tspan></text>
-    <text x="34" y="76" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="400" fill="#3d6b87">Full-stack developer · building AI-powered apps</text>
+    <text x="34" y="76" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="400" fill="#3d6b87">Software engineer · building AI-powered apps</text>
 
     <rect x="34" y="99" width="708" height="2" fill="url(#edge)" opacity=".85" filter="url(#soft)"/>
 

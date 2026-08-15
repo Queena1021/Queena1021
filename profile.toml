@@ -1,7 +1,7 @@
 [profile]
 name_first = "QUEENA"
 name_last  = "HO"
-tagline    = "Full-stack developer · building AI-powered apps"
+tagline    = "Software engineer · building AI-powered apps"
 badge      = "AI APPS"
 
 [palette]
@@ -11,8 +11,8 @@ name = "cinnamoroll"
 
 [banner]
 title    = "QUEENA"
-subtitle = "one commit at a time"
-kicker   = "FULL-STACK · AI APPLICATIONS"
+subtitle = ""
+kicker   = "SOFTWARE ENGINEER · AI APPLICATIONS"
 motif      = "image"
 image      = "assets/cinnamoroll.png"
 image_x    = 132

@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="./assets/hero.svg" alt="Queena — full-stack developer building AI-powered apps" width="100%"/>
+  <img src="./assets/hero.svg" alt="Queena — software engineer building AI-powered apps" width="100%"/>
 </div>
 
 <div align="center">
-  <img alt="Full-stack developer · AI agents and LLM pipelines · Java, Python, TypeScript, Swift · one commit at a time" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2600&pause=700&color=3D87B8&center=true&vCenter=true&width=700&lines=Full-stack+developer;AI+agents+%26+LLM+pipelines;Java+%C2%B7+Python+%C2%B7+TypeScript+%C2%B7+Swift;%E2%9C%A6+one+commit+at+a+time+%E2%9C%A6"/>
+  <img alt="Software engineer · AI agents and LLM pipelines · Java, Python, TypeScript" src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&duration=2600&pause=700&color=3D87B8&center=true&vCenter=true&width=700&lines=Software+engineer;AI+agents+%26+LLM+pipelines;Java+%C2%B7+Python+%C2%B7+TypeScript"/>
 </div>
 
 <img src="./assets/divider.svg" width="100%" alt=""/>
@@ -16,7 +16,7 @@
 
 <div align="center">
 
-<img alt="Java, TypeScript, Python, C#, C++, Swift, PHP, Spring, Next.js, React, FastAPI, Tailwind, PostgreSQL, MySQL, Docker, Supabase" src="https://skillicons.dev/icons?i=java,ts,py,cs,cpp,swift,php,spring,nextjs,react,fastapi,tailwind,postgres,mysql,docker,supabase&perline=8&theme=light"/>
+<img alt="Java, TypeScript, Python, C#, C++, PHP, Spring, Next.js, React, FastAPI, Tailwind, PostgreSQL, MySQL, Docker, Supabase" src="https://skillicons.dev/icons?i=java,ts,py,cs,cpp,php,spring,nextjs,react,fastapi,tailwind,postgres,mysql,docker,supabase&perline=8&theme=light"/>
 
 <sub>plus n8n, Spring AI and Qwen — no icons for those</sub>
 
@@ -29,7 +29,12 @@
 <div align="center">
 
 <img height="175" alt="GitHub stats" src="https://gh-readme-stats.vercel.app/api?username=Queena1021&count_private=true&show_icons=true&hide_rank=true&hide_border=true&bg_color=f6fcff&title_color=a83d6e&text_color=14435f&icon_color=1f5878"/>
+<!-- Streak card disabled: sampled 3/6 clean on both available hosts
+     (streak-stats.demolab.com and the legacy herokuapp deployment) — roughly
+     half of visitors saw a timeout or a "Failed to retrieve contributions"
+     error card. See docs/decisions.md. Re-enable only after re-sampling:
 <img height="175" alt="Contribution streak" src="https://streak-stats.demolab.com/?user=Queena1021&hide_border=true&background=f6fcff&ring=a83d6e&fire=a83d6e&currStreakNum=14435f&sideNums=14435f&currStreakLabel=a83d6e&sideLabels=3d6b87&dates=3d6b87&stroke=cfe6f2"/>
+-->
 
 </div>
 
